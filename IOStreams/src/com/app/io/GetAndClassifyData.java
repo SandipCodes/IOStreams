@@ -37,13 +37,13 @@ public class GetAndClassifyData {
 		  int i=0,j=0,k=0,l=0;
 		  
 		  //skip first line of heading
-		  
 		  st=br.readLine();
+		 //read remaining file
+		  
 		  while ((st = br.readLine()) != null) {
 			  
-			  Customer cust=clasifyData(st);
+			  Customer cust=getObject(st);
 			  
-			  System.out.println(cust);
 			  if(cust.getCradNumber().charAt(0)=='3') {
 			       amex.add(cust);
 			       i++;
@@ -74,7 +74,7 @@ public class GetAndClassifyData {
 		  visaMap.put(j, visa);
 		  othersMap.put(l, others);
 		
-		  
+		//adding final result to map  
 		map.put("amex", amexMap);
 		map.put("visa", visaMap);
 		map.put("master", masterMap);
@@ -92,7 +92,7 @@ public class GetAndClassifyData {
 		  
 	}//main()
 
-	private static Customer clasifyData(String st) {
+	private static Customer getObject(String st) {
 		
 		String words[]=st.split(" ");
 		Customer cust=new Customer();
