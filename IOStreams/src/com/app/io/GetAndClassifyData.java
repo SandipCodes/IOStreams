@@ -13,7 +13,7 @@ import java.util.Map.Entry;
 
 import com.app.beans.Customer;
 
-public class GetData {
+public class GetAndClassifyData {
 
 	
 	public static void main(String[] args) throws IOException {
